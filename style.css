@@ -1,0 +1,384 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url("C:/Xamppp/htdocs/web app 1/bg.png"); /* Replace 'background-image.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color: rgba(55, 53, 53, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Add flower symbols to the header */
+header::before {
+    content: "\1F33A";
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #ff69b4;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff69b4;
+}
+
+.top{
+    width: auto;
+    height: auto;
+}
+
+ /* Styles for animated character */
+ .character {
+    position: fixed;
+    bottom: 0;
+    left: 43%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite alternate; /* Example animation */
+}
+
+/* Keyframes for character animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Styles to adjust size of animated character */
+.character img {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styles for animated character */
+.characterc {
+    position: fixed;
+    bottom: 0;
+    left: 85%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite alternate; /* Example animation */
+}
+
+/* Keyframes for character animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    350% { transform: translateY(-20px); }
+}
+
+/* Styles to adjust size of animated character */
+.characterc img {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styles for animated character */
+.characterk {
+    position: fixed;
+    bottom: 0;
+    left: 80%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite alternate; /* Example animation */
+}
+
+/* Keyframes for character animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    150% { transform: translateY(-20px); }
+}
+
+/* Styles to adjust size of animated character */
+.characterk img {
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+ /* Styles for animated character */
+ .characterm {
+    position: fixed;
+    top: 30%;
+    left: 43%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite alternate; /* Example animation */
+}
+
+/* Keyframes for character animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Styles to adjust size of animated character */
+.characterm img {
+    width: 400px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #f0f0f0;
+}
+
+/* Add flower symbols to the footer */
+footer::before {
+    content: "\1F33C";
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Style for the home section */
+#home {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 120px;
+}
+
+/* Button styles */
+.button-blue {
+    background-color:#a58b9b;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.button-blue:hover {
+    background-color: #0f1010;
+    color: rgb(231, 70, 174);
+}
+
+.black-button {
+    background-color:#a58b9b;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.black-button:hover {
+    background-color: #0f1010;
+    color: rgb(231, 70, 174);
+}
+
+/* Logo styles */
+.logo-container {
+    position: fixed;
+    top: 60px; /* Adjust top position */
+    left: 650px; /* Adjust left position */
+    padding: 5px;
+    background-color: #f1bad0; /* Add a background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Round the corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+}
+
+.logo {
+    width: auto; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #a58b9b; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 150px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.btn:hover {
+    background-color: #040d18; /* Button background color on hover */
+}
+
+ /* CSS for calendar */
+  .calendar {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    float: left;
+}
+.calendar th, .calendar td {
+    border: 1px solid #f6e8e8;
+    padding: 8px;
+    text-align: center;
+}
+.calendar th {
+    background-color: #f2f2f2;
+}
+.calendar td {
+    cursor: pointer;
+}
+.calendar td:hover {
+    background-color: #f9f9f9;
+}
+
+/* CSS for habits and notes */
+.list-box {
+    width: 50%; /* Adjusted width for the merged list */
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.list-box h2 {
+    text-align: center;
+}
+.list {
+    list-style-type: none;
+    padding: 0;
+}
+.list li {
+    margin-bottom: 5px;
+    position: relative; /* Position relative for absolute positioning of clear button */
+}
+.list input {
+    width: calc(100% - 20px); /* Adjusted width for input to accommodate button */
+    padding: 5px;
+    box-sizing: border-box;
+}
+.list button {
+    width: 20px; /* Width of clear button */
+    height: 20px; /* Height of clear button */
+    padding: 0; /* Remove padding */
+    background-color: #dc3545; /* Red color for clear button */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make button circular */
+    cursor: pointer;
+    position: absolute; /* Position absolute for clear button */
+    top: 0;
+    right: 0;
+    display: none; /* Hide button by default */
+}
+.list li:hover button {
+    display: block; /* Show button on hover */
+}
+.list button.clear {
+    background-color: #dc3545; /* Red color for clear button */
+    width: 50px;
+}
+ /* CSS for habit colors */
+ .habit-color {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+}
+.creator-image {
+    display: block;
+    margin: 20px 100 20px 50px;
+    width: 160px; /* Adjust the width */
+    height: 180px; /* Adjust the height */
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+}
+#ok {
+    color: #040d18;
+    text-shadow: #333;
+}
+.main {
+    margin: -100px;
+}
+
+ /* Define CSS animation */
+ @keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to elements with class "animated" */
+.animated {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Define CSS animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to each letter */
+.animated-word {
+    display: inline-block;
+}
+
+.animated-word::before,
+.animated-word::after {
+    display: inline-block;
+    content: attr(data-text);
+    animation: bounce 1s infinite;
+}
+
+/* Adjust animation delay for each letter */
+.animated-word::before {
+    animation-delay: 0.1s; /* Adjust delay for first letter */
+}
+
+.animated-word::after {
+    animation-delay: 0.2s; /* Adjust delay for last letter */
+}
