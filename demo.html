@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Word</title>
+    <style>
+        /* Define CSS animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply animation to each letter */
+        .animated-word {
+            display: inline-block;
+        }
+
+        .animated-word::before,
+        .animated-word::after {
+            display: inline-block;
+            content: attr(data-text);
+            animation: bounce 1s infinite;
+        }
+
+        /* Adjust animation delay for each letter */
+        .animated-word::before {
+            animation-delay: 0.1s; /* Adjust delay for first letter */
+        }
+
+        .animated-word::after {
+            animation-delay: 0.2s; /* Adjust delay for last letter */
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span class="animated-word" data-text="Cool">Cool</span>
+    </h1>
+</body>
+</html>
