@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habst - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header  class="animated">
+       <div class="top">
+         <h1>Habst</h1>
+         <h4>Your personalized habit booster</h4>
+         <nav>
+            <ul>
+                <li><a href="index.html"><button class="black-button">Go back</button></a></li>
+                <li><a href="about.html"><button class="black-button">About</button></a></li>
+                <li><a href="features.html"><button class="black-button">Features</button></a></li>
+                <li><a href="contact.html"><button class="black-button">Contact</button></a></li>
+            </ul>
+         </nav>
+       </div>  
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <!-- Add your content here -->
+            <p>Welcome to Habst! Start tracking your habits today.</p>
+            <a href="register.html"><button class="button-blue">Register</button></a>
+        <div id="calendar"></div>
+        </section>
+
+    </main>
+    <div class="main">
+     <table class="calendar">
+        <caption>Calendar</caption>
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendarBody">
+           <!-- Calendar cells will be added dynamically here -->
+        </tbody>
+     </table>
+    
+     <div class="list-box">
+        <h2>Habits and Notes</h2>
+        <ul class="list" id="habitList">
+            <!-- List items will be added dynamically here -->
+        </ul>
+        <input type="text" id="habitInput" placeholder="Add habit">
+        <input type="text" id="noteInput" placeholder="Add note">
+        <button onclick="addHabitAndNote()">Add</button>
+     </div>
+    </div>
+    <script>
+        // Array to store habit colors
+        var habitColors = {};
+    
+        function addHabitAndNote() {
+            var habitInput = document.getElementById("habitInput");
+            var noteInput = document.getElementById("noteInput");
+            var habitList = document.getElementById("habitList");
+            var habitValue = habitInput.value.trim();
+            var noteValue = noteInput.value.trim();
+    
+            if (habitValue !== "") {
+                var listItem = document.createElement("li");
+                var habitColor = getRandomColor(); // Get a random color for the habit
+                habitColors[habitValue] = habitColor; // Store habit color in the array
+                var habitColorDiv = document.createElement("div");
+                habitColorDiv.className = "habit-color";
+                habitColorDiv.style.backgroundColor = habitColor;
+                listItem.appendChild(habitColorDiv);
+                listItem.textContent = habitValue;
+                if (noteValue !== "") {
+                    var note = document.createElement("span");
+                    note.textContent = " - " + noteValue;
+                    listItem.appendChild(note);
+                }
+                habitList.appendChild(listItem);
+                habitInput.value = "";
+                noteInput.value = "";
+                addClearButton(listItem);
+                addCalendarCheckbox(habitValue);
+            }
+        }
+    
+        function addClearButton(listItem) {
+            var clearButton = document.createElement("button");
+            clearButton.textContent = "X";
+            clearButton.onclick = function() {
+                listItem.remove();
+                removeCalendarCheckbox(listItem.textContent);
+            };
+            listItem.appendChild(clearButton);
+        }
+    
+        function addCalendarCheckbox(habitValue) {
+            var calendarBody = document.getElementById("calendarBody");
+            var row = document.createElement("tr");
+            for (var i = 0; i < 7; i++) {
+                var cell = document.createElement("td");
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.id = habitValue + "-" + i;
+                var label = document.createElement("label");
+                label.setAttribute("for", habitValue + "-" + i);
+                label.style.backgroundColor = habitColors[habitValue];
+                cell.appendChild(checkbox);
+                cell.appendChild(label);
+                row.appendChild(cell);
+            }
+            calendarBody.appendChild(row);
+        }
+    
+        function removeCalendarCheckbox(habitValue) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.id.startsWith(habitValue)) {
+                    checkbox.parentNode.parentNode.remove();
+                }
+            });
+        }
+    
+        // Function to generate a random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+    
+    <footer>
+        <p>&copy; 2024 Habst. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.0/main.min.js"></script>
+
+    <!-- Initialize FullCalendar -->
+    <script src="calendar.js"></script>
+</body>
+</html>
